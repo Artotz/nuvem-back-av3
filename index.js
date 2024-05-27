@@ -54,7 +54,7 @@ app.post("/produtos", async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 
-  res.status(201).json(data[0]);
+  res.status(201).json(data);
 });
 
 // Rota para alterar um produto
@@ -70,7 +70,7 @@ app.put("/produtos/:id", async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 
-  res.json(data[0]);
+  res.json(data);
 });
 
 // Rota para deletar um produto
