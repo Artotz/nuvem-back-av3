@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
@@ -9,6 +10,9 @@ const supabaseUrl = "https://jzjlzhwqqjrwdkxjxdsr.supabase.co";
 const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp6amx6aHdxcWpyd2RreGp4ZHNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY3NTk4ODEsImV4cCI6MjAzMjMzNTg4MX0.kTcNvNV9OkslFS1OB4UP-_Ip8NyN94RuAVvwcSE7I9s";
 const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Middleware CORS
+app.use(cors());
 
 app.use(express.json());
 
